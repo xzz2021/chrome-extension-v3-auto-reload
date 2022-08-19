@@ -11,7 +11,7 @@
 // chrome.runtime.onInstalled.addListener(() => {   //-----不能等待加载---否则首次启动浏览器必须手动点击chrome.runtime.reload()才能执行
   chrome.tabs.onUpdated.addListener(
     (tabId, changeInfo, tab) => {
-     if(tab.title == "xzz2022" && tab.status == "complete") {
+     if(tab.title == "xzz2022"  && tab.url != "chrome://newtab/") {  //修复打开新标签页后会无限刷新xzz2022页面的bug
       // console.log('---------tab.title: ------判定成功------')
     chrome.tabs.query({active: true},
     ([tab]) => {
